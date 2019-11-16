@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html amp lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1"><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bilimoria.io/#website","url":"https://bilimoria.io/","name":"Bilimoria Tech","potentialAction":{"@type":"SearchAction","target":"https://bilimoria.io/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://bilimoria.io/blog/how-to-reduce-redirects-to-optimize-your-website/#primaryimage","url":"https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash.jpg","width":1024,"height":683,"caption":"Reduce redirects"},{"@type":"WebPage","@id":"https://bilimoria.io/blog/how-to-reduce-redirects-to-optimize-your-website/#webpage","url":"https://bilimoria.io/blog/how-to-reduce-redirects-to-optimize-your-website/","inLanguage":"en-US","name":"How To Reduce Redirects To Optimize Your Website - Bilimoria Tech","isPartOf":{"@id":"https://bilimoria.io/#website"},"primaryImageOfPage":{"@id":"https://bilimoria.io/blog/how-to-reduce-redirects-to-optimize-your-website/#primaryimage"},"datePublished":"2018-09-29T15:03:36+00:00","dateModified":"2019-11-16T19:24:43+00:00","author":{"@id":"https://bilimoria.io/#/schema/person/d4e2512f5d83c1ab13dff03b58b4e15d"},"description":"Redirects are troubling, especially for small business owners. Here's a quick rundown on what redirects are, how to spot them, and free ways to reduce them."},{"@type":["Person"],"@id":"https://bilimoria.io/#/schema/person/d4e2512f5d83c1ab13dff03b58b4e15d","name":"Jenny Medeiros","image":{"@type":"ImageObject","@id":"https://bilimoria.io/#authorlogo","url":"https://secure.gravatar.com/avatar/13d7b6157208791e4176825740c38493?s=96&d=mm&r=g","caption":"Jenny Medeiros"},"sameAs":[]}]}</script><meta property="og:type" content="article"><meta property="og:title" content="How To Reduce Redirects To Optimize Your Website"><meta property="og:url" content="https://bilimoria.io/blog/how-to-reduce-redirects-to-optimize-your-website/"><meta property="og:description" content="Redirects are tricky little things. On one hand, they send your visitors to the right pages on your website. On the other hand, the process of sending them causes your pages to load slower than the…"><meta property="article:published_time" content="2018-09-29T15:03:36+00:00"><meta property="article:modified_time" content="2019-11-16T19:24:43+00:00"><meta property="og:site_name" content="Bilimoria Tech"><meta property="og:image" content="https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash.jpg"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="683"><meta property="og:image:alt" content="Reduce redirects"><meta property="og:locale" content="en_US"><title>How To Reduce Redirects To Optimize Your Website - Bilimoria Tech</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+amp-carousel .amp-wp-gallery-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 1rem;
+}
+
+.wp-block-gallery[data-amp-carousel="true"] {
+	display: block;
+	flex-wrap: unset;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 1140px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #fff;
+	color: #353535;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #353535;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #353535;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #353535;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #353535;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #696969;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #c2c2c2;
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #c2c2c2 url( https://bilimoria.io/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #c2c2c2;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #c2c2c2;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #696969;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style></head><body class="">
+
+<header id="top" class="amp-wp-header"><div>
+		<a href="https://bilimoria.io/">
+										<amp-img src="https://bilimoria.io/wp-content/uploads/2017/11/cropped-favicon-nbg-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				Bilimoria Tech			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">How To Reduce Redirects To Optimize Your Website</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/13d7b6157208791e4176825740c38493?s=24&d=mm&r=g" alt="Jenny Medeiros" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">Jenny Medeiros</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2018-09-29T15:03:36+00:00">
+		1 year ago	</time></div>
+	</header><figure class="amp-wp-article-featured-image wp-caption"><amp-img width="1024" height="683" src="https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash-1024x683.jpg" class="attachment-large size-large wp-post-image amp-wp-enforced-sizes" alt="Reduce redirects" srcset="https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash.jpg 1024w, https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash-300x200.jpg 300w, https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash-768x512.jpg 768w, https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash-272x182.jpg 272w" layout="intrinsic"><noscript><img width="1024" height="683" src="https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash-1024x683.jpg" class="attachment-large size-large wp-post-image" alt="Reduce redirects" srcset="https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash.jpg 1024w,https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash-300x200.jpg 300w,https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash-768x512.jpg 768w,https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash-272x182.jpg 272w" sizes="(max-width: 1024px) 100vw, 1024px"></noscript></amp-img></figure><div class="amp-wp-article-content">
+		<p>Redirects are tricky little things. On one hand, they send your visitors to the right pages on your website. On the other hand, the process of sending them causes your pages to load slower than they should.
+</p>
+<p>Considering users give up on websites if they take <a href="https://www.hobo-web.co.uk/your-website-design-should-load-in-4-seconds/" rel="noopener noreferrer" target="_blank">more than 2-3 seconds to load</a>, having too many redirects is a troubling problem. Especially if you’re a small business owner already struggling to usher traffic to your website.
+</p>
+<p>The good thing about redirects is they’re easy to catch. We’ll give you a quick rundown of the topic so you understand exactly what you’re dealing with. In the next 3-4 minutes, you’ll learn: </p>
+<ul><li>What are redirects</li>
+<li>How redirects hurt website speed</li>
+<li>Free tools to check for redirects</li>
+<li>Tips to minimize redirects for an optimized website</li>
+</ul><p>Ready? Here goes nothin’.
+</p>
+
+<p><strong></strong></p>
+<h2>What are redirects?</h2>
+<p>When you move or delete something on your website, you want your visitors to arrive at the new location, not the old one. Well, a redirect is a function that automatically sends your website visitors to the new location. </p>
+<p><strong></strong></p>
+<h2>Example of a redirect</h2>
+<p>Redirects are about as common as cracked iPhone screens. Although there are a few different types of redirects, this is what a typical scenario looks like:</p>
+<ul><li>A user decides to pop into your website and types “yourwebsite.com”</li>
+<li>Your redirect kicks in and turns their request into “www.yourwebsite.com”</li>
+<li>But you added an SSL certificate to secure your website so it redirects again to “https://yourwebsite.com”</li>
+<li>If your user is somehow still patiently waiting, they’ll finally land on your website.</li>
+</ul><p>Not very user-friendly, right? To make matters worse, the delay isn’t SEO-friendly either. </p>
+<p><strong></strong></p>
+<h2>When it’s okay to use redirects</h2>
+<p>So far, redirects seem tedious (and they are). But there are some good reasons why you would have redirects in the first place. </p>
+<ul><li>To turn “yourwebsite.com” to “www.yourwebsite.com” if that’s the default URL.</li>
+<li>Direct traffic and resources to an updated page after you published new content.</li>
+<li>Send your visitors to a temporary page while you fix up the current page.</li>
+<li>Redirect old URLs to a new permalink structure (if you’re on WordPress).</li>
+</ul><p>These are all very valid, in fact, redirecting from a bad page to an updated page is considered a good SEO practice. But some redirects can be avoided or at least shortened so that your visitor has fewer hoops to jump through to get to what they want. </p>
+<p><strong></strong></p>
+<h2>Why do redirects hurt website speed?</h2>
+<p>When booking a flight to some balmy destination, which would be faster: the direct flight or the one with multiple connections?
+</p>
+<p>The problem with redirects is your visitors have to go through one or multiple connections before they land at the new location. Whether it’s just one connection or various, your page will still take longer to load. And as you know, a slow loading time is something Google notices when ranking your website. (Yes, the dreaded SEO strikes again.)
+</p>
+<p>Furthermore, the wait is worse for visitors on mobile as they’re typically on limited data or leeching off free Wi-Fi in a public space. With the number of <a href="https://www.statista.com/statistics/274774/forecast-of-mobile-phone-users-worldwide/" rel="noopener noreferrer" target="_blank">mobile phone users forecast to reach 4.68 billion in 2019</a>, you wouldn’t want your website put on the slow-loading blacklist.
+</p>
+<p>While there are many steps you can take to <a href="https://bilimoria.io/blog/website-speed/" rel="noopener noreferrer" target="_blank">make your website load faster</a>, it’ll never really reach its best speed unless you either reduce or completely eradicate all your redirects.
+</p>
+
+<p><strong></strong></p>
+<h2>Wait, what are 301 and 302 redirects?</h2>
+<p>Before we get into the tools, it’s important that you understand the most common types of redirects: 301 redirects and 302 redirects.
+</p>
+<p>301 redirects are permanent. These are used when a page has been irrevocably moved or deleted and you want to avoid visitors facing a lovely ERROR 404 on the outdated page. Search engines will only display the new page.
+</p>
+<p>302 redirects are temporary. These are used when you’re just redirecting traffic to another page for a while. This one is a little confusing for search engines and they may end up displaying both the old and new page in search results. </p>
+<p><strong></strong></p>
+<h2>How to check for redirects on your website</h2>
+<p>Now that’s over with, you’ll be glad to know that there is no shortage of tools that scan your website and give you a generous report on all the redirects currently hiding under the hood. The best part is that many of these tools are free. Here’s a list of the most popular redirect checkers.
+</p>
+<p><a href="https://developers.google.com/speed/pagespeed/insights/" rel="noopener noreferrer" target="_blank">Google PageSpeed:</a> You can always count on trusty Google to tell you where you’re going wrong. Kill two birds with one stone by using this tool to check your page speed plus which redirects are lowering your score.
+</p>
+<p><a href="https://varvy.com/tools/redirects/" rel="noopener noreferrer" target="_blank">Redirect Mapper Tool:</a> This free tool focuses on how many redirects your main website URL is putting visitors through. Is it adding the www and then the https? Or does it go straight to https? If you have more than one redirect, it’ll let you know.
+</p>
+<p><a href="https://www.giftofspeed.com/broken-requests-test/" rel="noopener noreferrer" target="_blank">Broken Requests Tool:</a> Here’s another freebie that reveals all your 301 and 302 redirects. Then all you’ll need to do is carefully investigate each one and decide whether they’re worth a slower loading time or not.
+</p>
+<p><a href="http://redirectdetective.com/" rel="noopener noreferrer" target="_blank">Redirect Detective:</a> This is by no means the prettiest of them all but it sure is useful (and free). If you’re not sure where a particular URL redirects to, you can paste it in the tool and it’ll reveal all its secrets.
+</p>
+<p><a href="https://www.screamingfrog.co.uk/redirect-checker/" rel="noopener noreferrer" target="_blank">Screaming Frog Bulk Redirect Checker:</a> Need something a bit more robust? This is a downloadable tool where you can upload up to 500 URLs (with the free plan) and get a complete view of what kind of redirects you have and where they lead to. </p>
+<p>Once you have identified the offending redirects, all you have to do is delete the ones you don’t need. You can do this using your hosting provider’s control panel, WordPress plugins (which we’ll mention later), or digging through your htaccess file (if you’re the tecchy type). </p>
+<p><strong></strong></p>
+<h2>Tips for minimizing redirects</h2>
+<p>You know how much we love giving tips. Here are a few things you can do to keep your redirects low for a truly optimized website. </p>
+<ul><li>Never link to a page that you know has a redirect on it. It will only lead to multiple redirects and a very frustrated visitor.</li>
+<li>Plugins can result in unnecessary redirects, so make sure to clear out any plugins that you don’t really need.
+</li><li>Regularly scan your website for old redirects that lead to pages you deleted a long time ago. This is a good practice after <a href="https://bilimoria.io/blog/best-web-hosting-small-business-website/" rel="noopener noreferrer" target="_blank">switching hosting providers</a> or making large content changes to your website.</li>
+<li>If you’re a WordPress user, try the <a href="https://en-us.wordpress.org/plugins/redirection/" rel="noopener noreferrer" target="_blank">Redirection plugin</a> for alerts on new redirects, 404 errors, and any loose ends that you’re not aware of.</li>
+</ul><p><strong></strong></p>
+<h2>Need help cleaning up your redirects?</h2>
+<p>Keeping your website neat and tidy while running a business is a bit much to ask. Why not hand over the task of minimizing redirects and optimizing your website to someone else?
+</p>
+<p>For a friendly hand with anything from cleaning up redirects to migrating to better hosting, get in touch and we’ll squeeze you in for a free consultation. <a href="https://bilimoria.io/contact/" rel="noopener noreferrer" target="_blank">Get in touch now.</a></p>
+	</div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://bilimoria.io/blog/category/site-speed/" rel="category tag">Site Speed</a>	</div>
+
+	<div class="amp-wp-meta amp-wp-tax-tag">
+		Tags: <a href="https://bilimoria.io/blog/tag/optimize-my-website/" rel="tag">optimize my website</a>, <a href="https://bilimoria.io/blog/tag/redirect-tools/" rel="tag">redirect tools</a>, <a href="https://bilimoria.io/blog/tag/redirects/" rel="tag">redirects</a>, <a href="https://bilimoria.io/blog/tag/reduce-redirects/" rel="tag">reduce redirects</a>	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>Bilimoria Tech</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer><amp-pixel src="https://pixel.wp.com/g.gif?v=ext&j=1%3A7.9&blog=144468188&post=3541&tz=0&srv=bilimoria.io&host=bilimoria.io&rand=RANDOM&ref=DOCUMENT_REFERRER"></amp-pixel></body></html>
