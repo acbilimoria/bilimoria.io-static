@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html amp lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1"><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bilimoria.io/#website","url":"https://bilimoria.io/","name":"Bilimoria Tech","potentialAction":{"@type":"SearchAction","target":"https://bilimoria.io/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://bilimoria.io/blog/how-to-optimize-website-images-for-superior-seo/#primaryimage","url":"https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo.jpg","width":1024,"height":684},{"@type":"WebPage","@id":"https://bilimoria.io/blog/how-to-optimize-website-images-for-superior-seo/#webpage","url":"https://bilimoria.io/blog/how-to-optimize-website-images-for-superior-seo/","inLanguage":"en-US","name":"How to Optimize Website Images for Superior SEO - Bilimoria Tech","isPartOf":{"@id":"https://bilimoria.io/#website"},"primaryImageOfPage":{"@id":"https://bilimoria.io/blog/how-to-optimize-website-images-for-superior-seo/#primaryimage"},"datePublished":"2018-12-10T22:39:29+00:00","dateModified":"2019-11-16T19:24:43+00:00","author":{"@id":"https://bilimoria.io/#/schema/person/d4e2512f5d83c1ab13dff03b58b4e15d"},"description":"Learn how to shrink your images, hold their quality, and keep Google happy so your SEO ranks higher. We write in plain English for small business owners."},{"@type":["Person"],"@id":"https://bilimoria.io/#/schema/person/d4e2512f5d83c1ab13dff03b58b4e15d","name":"Jenny Medeiros","image":{"@type":"ImageObject","@id":"https://bilimoria.io/#authorlogo","url":"https://secure.gravatar.com/avatar/13d7b6157208791e4176825740c38493?s=96&d=mm&r=g","caption":"Jenny Medeiros"},"sameAs":[]}]}</script><meta property="og:type" content="article"><meta property="og:title" content="How to Optimize Website Images for Superior SEO"><meta property="og:url" content="https://bilimoria.io/blog/how-to-optimize-website-images-for-superior-seo/"><meta property="og:description" content="Here’s the problem: Google doesn’t like websites with heavy images. They slow down your website and that impacts your SEO. But if you compress your images to speed up your website, thei…"><meta property="article:published_time" content="2018-12-10T22:39:29+00:00"><meta property="article:modified_time" content="2019-11-16T19:24:43+00:00"><meta property="og:site_name" content="Bilimoria Tech"><meta property="og:image" content="https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo.jpg"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="684"><meta property="og:locale" content="en_US"><title>How to Optimize Website Images for Superior SEO - Bilimoria Tech</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+amp-carousel .amp-wp-gallery-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 1rem;
+}
+
+.wp-block-gallery[data-amp-carousel="true"] {
+	display: block;
+	flex-wrap: unset;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 1140px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #fff;
+	color: #353535;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #353535;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #353535;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #353535;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #353535;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #696969;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #c2c2c2;
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #c2c2c2 url( https://bilimoria.io/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #c2c2c2;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #c2c2c2;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #696969;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+		/* Inline stylesheets */
+:root:not(#_):not(#_):not(#_):not(#_):not(#_) .amp-wp-74be222{list-style-type:none}	</style></head><body class="">
+
+<header id="top" class="amp-wp-header"><div>
+		<a href="https://bilimoria.io/">
+										<amp-img src="https://bilimoria.io/wp-content/uploads/2017/11/cropped-favicon-nbg-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				Bilimoria Tech			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">How to Optimize Website Images for Superior SEO</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/13d7b6157208791e4176825740c38493?s=24&d=mm&r=g" alt="Jenny Medeiros" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">Jenny Medeiros</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2018-12-10T22:39:29+00:00">
+		11 months ago	</time></div>
+	</header><figure class="amp-wp-article-featured-image wp-caption"><amp-img width="1024" height="684" src="https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo-1024x684.jpg" class="attachment-large size-large wp-post-image amp-wp-enforced-sizes" alt="" srcset="https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo.jpg 1024w, https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo-300x200.jpg 300w, https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo-768x513.jpg 768w, https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo-272x182.jpg 272w" layout="intrinsic"><noscript><img width="1024" height="684" src="https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo-1024x684.jpg" class="attachment-large size-large wp-post-image" alt="" srcset="https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo.jpg 1024w,https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo-300x200.jpg 300w,https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo-768x513.jpg 768w,https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo-272x182.jpg 272w" sizes="(max-width: 1024px) 100vw, 1024px"></noscript></amp-img></figure><div class="amp-wp-article-content">
+		<p>Here’s the problem: Google doesn’t like websites with heavy images. They slow down your website and that impacts your SEO. But if you compress your images to speed up your website, their quality will plummet and then your <em>users</em> won’t like them. So your users bounce and, well, that impacts your SEO.</p>
+<p>Optimizing your images can be a double-edged sword, but it’s also one of the most important things you can do for your website. From making them smaller and quicker to load to adding captions for SEO, optimizing your images is easy to do and doesn’t need much tech know-how.</p>
+<p>You’re about to learn the simple techniques to shrink your images, hold their quality, and keep both Google <em>and</em> your users happy. Yep, all in less than three minutes.</p>
+<p>Here’s what you’ll find in this post:</p>
+<ul><li>Why optimizing your images can make or break your SEO ranking.</li>
+<li>What alt texts are and how to use them for better SEO (and accessibility).</li>
+<li>How to choose the best file format for your images.</li>
+<li>The simple rule for perfectly sized web images.</li>
+<li>Quick tips to ensure your images always appear on Google.</li>
+<li>WordPress plugins that can optimize your images in seconds.</li>
+</ul><p>Ready to kick bad SEO to the curb? Let’s get started.</p>
+<h2>Why you should optimize your images</h2>
+<p>On average, <a href="https://httparchive.org/reports/state-of-images#bytesImg" target="_blank" rel="noopener noreferrer">images make up over 50%</a> of a total webpage’s weight. If they’re not optimized, more than half of your website will drag down your page speed and ranking.</p>
+<p>Optimizing your images is good for business, not just for SEO but also for the user experience. Here’s a quick peek of the main benefits:</p>
+<ul><li>Your pages will load faster which will keep today’s impatient users on your website longer. They’ll leave if loading times exceed 2-3 seconds, so every second counts. Check our post on <a href="https://bilimoria.io/blog/website-speed/" target="_blank" rel="noopener noreferrer">how to speed up your website</a> for more tips.</li>
+<li>Your images will be crawled and indexed by Google so they’ll appear in search results for users to find. This means more traffic for your site which in turn bumps up your SEO ranking.</li>
+<li>Your website will take up less storage space on your server. This is great news if you have a limited web hosting plan. (Check our <a href="https://bilimoria.io/blog/best-web-hosting-small-business-website/" target="_blank" rel="noopener noreferrer">beginners guide to web hosting</a> for help on choosing the right host for you.)</li>
+<li>Smaller image sizes use less bandwidth, something your mobile users will greatly appreciate. Not to mention Google is big on mobile and if your site doesn’t work well on the small screen, you’ll be punished with a lower SEO score.</li>
+</ul><h2>Alt texts and how to use them correctly</h2>
+<p>Alternative text is that field you always see beneath an image (no, not the caption. After that).</p>
+<p><amp-img class="alignnone size-full wp-image-3605 amp-wp-enforced-sizes" src="https://bilimoria.io/wp-content/uploads/2018/12/alt-text-field-in-wordpress.png" alt="screenshot of alt text field in WordPress" width="280" height="494" srcset="https://bilimoria.io/wp-content/uploads/2018/12/alt-text-field-in-wordpress.png 280w, https://bilimoria.io/wp-content/uploads/2018/12/alt-text-field-in-wordpress-170x300.png 170w" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-3605" src="https://bilimoria.io/wp-content/uploads/2018/12/alt-text-field-in-wordpress.png" alt="screenshot of alt text field in WordPress" width="280" height="494" srcset="https://bilimoria.io/wp-content/uploads/2018/12/alt-text-field-in-wordpress.png 280w,https://bilimoria.io/wp-content/uploads/2018/12/alt-text-field-in-wordpress-170x300.png 170w" sizes="(max-width: 280px) 100vw, 280px"></noscript></amp-img></p>
+<p>People either ignore this field completely or stuff it with keywords. But the primary use of alt texts is to give an image description for users who are blind or have low vision.</p>
+<p>You see, these users tend to have screen readers that read everything on the website out loud. So if your images don’t have alt texts, these users simply won’t know what the image is about.</p>
+<p>From an SEO perspective, the alt text serves as an opportunity for search engines to capture keywords in your content. The main thing to remember is to keep alt texts brief and as descriptive and specific as possible.</p>
+<p>Here’s an example of a good vs bad alt text by <a href="https://blog.hubspot.com/marketing/image-alt-text" target="_blank" rel="noopener noreferrer">Hubspot</a>. Take a look at the following image:</p>
+<p><amp-img class="alignnone size-full wp-image-3606 amp-wp-enforced-sizes" src="https://bilimoria.io/wp-content/uploads/2018/12/Alt-text-example.png" alt="Woman pointing to female student's computer screen in class" width="501" height="332" srcset="https://bilimoria.io/wp-content/uploads/2018/12/Alt-text-example.png 501w, https://bilimoria.io/wp-content/uploads/2018/12/Alt-text-example-300x199.png 300w" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-3606" src="https://bilimoria.io/wp-content/uploads/2018/12/Alt-text-example.png" alt="Woman pointing to female student's computer screen in class" width="501" height="332" srcset="https://bilimoria.io/wp-content/uploads/2018/12/Alt-text-example.png 501w,https://bilimoria.io/wp-content/uploads/2018/12/Alt-text-example-300x199.png 300w" sizes="(max-width: 501px) 100vw, 501px"></noscript></amp-img></p>
+<p>In their article, Hubspot describes the case of this image being used in a webpage promoting a business school. In this scenario, you’d want the alt text to include keywords relevant to business schools while also being descriptive enough to form a mental image in people’s minds.</p>
+<p>Bad alt text would go something like, “Woman pointing to someone’s computer screen.” Whereas good alt text would read, “Business school professor pointing to female student’s computer screen in class.”</p>
+<p>See how that works?</p>
+<h2>Best file formats for your images</h2>
+<p>The format you choose for your images can make a world of difference in terms of size and quality. You know about JPEG, PNG, and GIF – but do you know when to use each one for web? We’ve got you.</p>
+<h3><strong>JPEG</strong></h3>
+<p>JPEG is arguably the most popular image file format on the web, and for good reason. It’s ideal for photographs and intensely colorful images, like products and homepage banners.</p>
+<p>You can hardly go wrong with JPEG, but there is a small catch. JPEG has two optimization modes: lossy and lossless. Lossy means that your image will be reduced by permanently deleting some information, which in turn degrades the image quality.</p>
+<p>With lossy, the more you compress the image, the lower the quality will be. Check the grey area in the images below (courtesy of <a href="https://optimus.keycdn.com/support/lossy-vs-lossless" target="_blank" rel="noopener noreferrer">Optimus</a>) to see what we mean.</p>
+<p><amp-img class="alignnone size-full wp-image-3603 amp-wp-enforced-sizes" src="https://bilimoria.io/wp-content/uploads/2018/12/Example-lossy-image-optimization.png" alt="Series of images showing result of lossy compression" width="663" height="189" srcset="https://bilimoria.io/wp-content/uploads/2018/12/Example-lossy-image-optimization.png 663w, https://bilimoria.io/wp-content/uploads/2018/12/Example-lossy-image-optimization-300x86.png 300w" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-3603" src="https://bilimoria.io/wp-content/uploads/2018/12/Example-lossy-image-optimization.png" alt="Series of images showing result of lossy compression" width="663" height="189" srcset="https://bilimoria.io/wp-content/uploads/2018/12/Example-lossy-image-optimization.png 663w,https://bilimoria.io/wp-content/uploads/2018/12/Example-lossy-image-optimization-300x86.png 300w" sizes="(max-width: 663px) 100vw, 663px"></noscript></amp-img></p>
+<p>On the other hand, lossless, as the name suggests, shrinks the image size but doesn’t delete any information – so the quality stays the same. Granted, the image won’t get as small as with lossy, but it’ll look much better to the trained eye.</p>
+<p><amp-img class="alignnone size-full wp-image-3604 amp-wp-enforced-sizes" src="https://bilimoria.io/wp-content/uploads/2018/12/Example-lossless-image.png" alt="Two images showing results of lossless compression" width="452" height="190" srcset="https://bilimoria.io/wp-content/uploads/2018/12/Example-lossless-image.png 452w, https://bilimoria.io/wp-content/uploads/2018/12/Example-lossless-image-300x126.png 300w" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-3604" src="https://bilimoria.io/wp-content/uploads/2018/12/Example-lossless-image.png" alt="Two images showing results of lossless compression" width="452" height="190" srcset="https://bilimoria.io/wp-content/uploads/2018/12/Example-lossless-image.png 452w,https://bilimoria.io/wp-content/uploads/2018/12/Example-lossless-image-300x126.png 300w" sizes="(max-width: 452px) 100vw, 452px"></noscript></amp-img></p>
+<h3><strong>PNG</strong></h3>
+<p>The main thing you need to know about PNG is that it’s the best format for high-quality images that have transparent layers. If your image has overlays or a transparent background, save it in PNG.</p>
+<p>Where PNG is concerned, there’s PNG-8 and PNG-24. We won’t get into the technical details, but the higher the number the more colors it can handle. If you’ve got a logo with two colors in it, go ahead and save space with PNG-8. If you have a complex image or photo, go for PNG-24 so your image doesn’t end up looking like an 80s video game graphic.</p>
+<h3><strong>GIF</strong></h3>
+<p>You know what GIFs are, but you’d be surprised at how many website owners save their product images and logos in GIF under the impression it’s “better”.</p>
+<p>Look, if your logo is simple and PNG is still too heavy, then go ahead and save it as a GIF. But for all that is good do <em>not</em> use GIF for product images. They’ll make your users think they need glasses to see them clearly.</p>
+<h2>The best size for web images</h2>
+<p>Honestly, there’s no one size to rule them all. But webmasters generally agree that image dimensions should be anywhere between 1500 – 2500 px wide. It’s big enough to maintain the quality, but not so big it’ll weigh your page down.</p>
+<p>As for the size, when in doubt follow the “200 KB rule,” which essentially means all your images will be a lot less troublesome if they’re under 200 KB.</p>
+<p>If you don’t have Photoshop to whittle your images down to size, try any of these free image optimization tools.</p>
+<ul><li><a href="http://www.gimp.org/" target="_blank" rel="noopener noreferrer">Gimp</a> (basically a free Photoshop)</li>
+<li><a href="https://tinyjpg.com/" target="_blank" rel="noopener noreferrer">TinyJPG</a> or <a href="https://tinypng.com/" target="_blank" rel="noopener noreferrer">TinyPNG</a></li>
+<li><a href="https://kraken.io/web-interface" target="_blank" rel="noopener noreferrer">Kraken</a></li>
+<li><a href="https://imageoptim.com/" target="_blank" rel="noopener noreferrer">ImageOptim</a></li>
+<li><a href="https://compressor.io/compress" target="_blank" rel="noopener noreferrer">Compressor.io</a></li>
+</ul><h2>How to get your images on Google</h2>
+<p>Have you ever Googled your product or service and wondered why it’s not appearing in Google Images? If you already added alt texts and your images still aren’t showing, here are a few more things you can do to catch Google’s attention.</p>
+<h3><strong>Name images in plain English</strong></h3>
+<p>Unless you know people who type “image10382365746.png” in the search bar, your images shouldn’t be named like that.</p>
+<p>Giving your images a proper name that includes your top keywords is a great way to add extra SEO points to your website. Here’s a short list of tips for naming your images for SEO.</p>
+<ul><li class="amp-wp-74be222">
+<ul><li>Keep the name to five words or fewer. Google doesn’t like novels in image names.</li>
+</ul></li>
+</ul><ul><li class="amp-wp-74be222">
+<ul><li>Use hyphens to separate the words so they’re clearer to both Google and people. (E.g. “website-developer-portland” rather than “websitedeveloperportland”)</li>
+</ul></li>
+</ul><ul><li class="amp-wp-74be222">
+<ul><li>Add keywords but don’t stuff them all in if they’re not relevant to the image. Say “website-developer-oregon” not “best-website-developer-oregon-java-css-hosting-free-consultation”.</li>
+</ul></li>
+</ul><ul><li>Make it descriptive enough for anyone to get the gist of what the image is about without having to look at it. Try reading the name out loud to someone as a test.</li>
+</ul><h3><strong>Add captions to every image</strong></h3>
+<p>An empty caption is a missed SEO opportunity. Google crawls captions too so if anyone searches for a keyword that happens to be in one of your captions, they’ll find your website.</p>
+<p>Captions are also helpful little things for users to understand your content better. According to <a href="https://blog.kissmetrics.com/shocking-truth-about-graphics/" target="_blank" rel="noopener noreferrer">KissMetrics</a>, captions under images are read 300% more often than the rest of the website.</p>
+<p>Writing a good caption is a lot like writing a good image name. Keep it clear and to the point so your users can understand the context of the image. For example, if you have a photo of a sunset, a good caption would be: Sunset on Palm Beach, Florida.</p>
+<h3><strong>Generate an image site map</strong></h3>
+<p>This one needs a bit more tech-know-how, but it’s a good way to increase your chances of getting your images found.</p>
+<p>If your website is using flashy pop-ups or fancy Javascript image galleries, those images might not get picked up by Google. To help the Google bots find and crawl these images, you can create an image sitemap using generator scripts like <a href="https://www.xml-sitemaps.com/images-sitemap.html" target="_blank" rel="noopener noreferrer">this one</a>. (You can always more information on <a href="https://www.google.com/webmasters/" target="_blank" rel="noopener noreferrer">Google Webmaster Tools</a>).</p>
+<h2>WordPress plugins to optimize your images</h2>
+<p>Ah, WordPress plugins. There’s no better way to spare yourself from the troubles of image optimization than installing a plugin. So here’s a list of the top WordPress plugins for the job.</p>
+<p><a href="https://wordpress.org/plugins/imagify/" target="_blank" rel="noopener noreferrer">Imagify</a>: For bulk optimization and three levels of compression, this plugin is the way to go. It also has a restore feature if you’re not happy with the final image. More importantly, there’s a free version you can use.</p>
+<p><a href="https://wordpress.org/plugins/wp-smushit/" target="_blank" rel="noopener noreferrer">WP Smush</a>: This plugin takes all the images you’ve uploaded and, well, smushes them down to size. It can do it in bulk or manually if you want. And yes, they have a free plan too.</p>
+<p><a href="https://wordpress.org/plugins/ewww-image-optimizer/" target="_blank" rel="noopener noreferrer">EWWW Image Optimizer</a>: There’s nothing disgusting about this popular plugin. It’s easy to use and automatically shrinks your images as soon as you upload them. You don’t even need to create an account to use it.</p>
+<p><a href="https://wordpress.org/plugins/resmushit-image-optimizer/" target="_blank" rel="noopener noreferrer">reSmush.it</a>: This one is currently the top-rated WordPress plugin for image optimization. It smushes images automatically and offers a bulk option too. The downside is it limits your uploads to 5MB in size. (Still good for a free plugin though.)</p>
+<h2>Need help optimizing your website?</h2>
+<p>Image optimization can be the extra spark your site needs to outrank the competition – but it’s not something every website owner wants to deal with.</p>
+<p>If time is of the essence, let us deal with it for you. At Bilimoria Tech, we take care of each and every detail of your website so you can focus on running and growing your business.</p>
+<p>To spend less time stressing over optimization and SEO, drop us a note and we’ll book you in for a quick chat to see how we can help.</p>
+<p>Sound good? <a href="https://bilimoria.io/contact" target="_blank" rel="noopener noreferrer">Chat with us today!</a></p>
+	</div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://bilimoria.io/blog/category/image-optimization/" rel="category tag">Image Optimization</a>, <a href="https://bilimoria.io/blog/category/seo/" rel="category tag">SEO</a>, <a href="https://bilimoria.io/blog/category/site-speed/" rel="category tag">Site Speed</a>	</div>
+
+	<div class="amp-wp-meta amp-wp-tax-tag">
+		Tags: <a href="https://bilimoria.io/blog/tag/optimize-images/" rel="tag">optimize images</a>, <a href="https://bilimoria.io/blog/tag/optimize-website/" rel="tag">optimize website</a>, <a href="https://bilimoria.io/blog/tag/reduce-image-size/" rel="tag">reduce image size</a>, <a href="https://bilimoria.io/blog/tag/speed-up-my-website/" rel="tag">speed up my website</a>	</div>
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="https://bilimoria.io/blog/how-to-optimize-website-images-for-superior-seo/#comments">
+			View Comments		</a>
+	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>Bilimoria Tech</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer><amp-pixel src="https://pixel.wp.com/g.gif?v=ext&j=1%3A7.9&blog=144468188&post=3597&tz=0&srv=bilimoria.io&host=bilimoria.io&rand=RANDOM&ref=DOCUMENT_REFERRER"></amp-pixel></body></html>
