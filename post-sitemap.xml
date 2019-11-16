@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//bilimoria.io/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://bilimoria.io/blog/how-to-optimize-website-images-for-superior-seo/</loc>
+		<lastmod>2019-11-16T19:24:43+00:00</lastmod>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/12/optimize-images-for-seo.jpg</image:loc>
+			<image:title><![CDATA[optimize images for seo]]></image:title>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/12/alt-text-field-in-wordpress.png</image:loc>
+			<image:caption><![CDATA[screenshot of alt text field in WordPress]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/12/Alt-text-example.png</image:loc>
+			<image:caption><![CDATA[Woman pointing to female student's computer screen in class]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/12/Example-lossy-image-optimization.png</image:loc>
+			<image:caption><![CDATA[Series of images showing result of lossy compression]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/12/Example-lossless-image.png</image:loc>
+			<image:caption><![CDATA[Two images showing results of lossless compression]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://bilimoria.io/blog/how-to-reduce-redirects-to-optimize-your-website/</loc>
+		<lastmod>2019-11-16T19:24:43+00:00</lastmod>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/09/nick-fewings-589145-unsplash.jpg</image:loc>
+			<image:title><![CDATA[nick-fewings-589145-unsplash]]></image:title>
+			<image:caption><![CDATA[Reduce redirects]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://bilimoria.io/blog/slow-wordpress-website-heres-how-to-speed-it-up/</loc>
+		<lastmod>2019-11-16T19:24:43+00:00</lastmod>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed.jpg</image:loc>
+			<image:title><![CDATA[WordPress website speed]]></image:title>
+			<image:caption><![CDATA[Laptop with wordpress website on the screen]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/11/pagespeed-test.jpg</image:loc>
+			<image:caption><![CDATA[Screenshot of Pingdom speed test tool]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://bilimoria.io/blog/website-speed/</loc>
+		<lastmod>2019-11-16T19:24:44+00:00</lastmod>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/04/pexels-photo-106344.jpeg</image:loc>
+			<image:title><![CDATA[optimize website speed]]></image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://bilimoria.io/blog/lazy-loading-images-examples/</loc>
+		<lastmod>2019-11-16T19:24:44+00:00</lastmod>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/05/medium-images.png</image:loc>
+			<image:title><![CDATA[medium-images]]></image:title>
+			<image:caption><![CDATA[Screenshot of Medium images loading]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/05/google-images.png</image:loc>
+			<image:caption><![CDATA[Screenshot of Google Images loading]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/05/medium-images.png</image:loc>
+			<image:caption><![CDATA[Screenshot of Medium images loading]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images.png</image:loc>
+			<image:caption><![CDATA[Screenshot of Unsplash images loading]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images.png</image:loc>
+			<image:caption><![CDATA[Screenshot of Pinterest images loading]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://bilimoria.io/blog/how-leverage-browser-caching/</loc>
+		<lastmod>2019-11-16T19:24:44+00:00</lastmod>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/05/browser-caching-image.png</image:loc>
+			<image:title><![CDATA[Browser Caching]]></image:title>
+			<image:caption><![CDATA[Man sitting at his laptop]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://bilimoria.io/blog/practical-small-business-website-checklist/</loc>
+		<lastmod>2019-11-16T19:24:44+00:00</lastmod>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/07/small-business-website-checklist.jpg</image:loc>
+			<image:title><![CDATA[small business website checklist]]></image:title>
+			<image:caption><![CDATA[asian man looking happy with his laptop]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/07/Bilimoria-tech-reviews.png</image:loc>
+			<image:caption><![CDATA[screenshot of bilimoria search engine listing]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/07/Topspot.png</image:loc>
+			<image:caption><![CDATA[Screenshot of Topspot homepage]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://bilimoria.io/blog/best-web-hosting-small-business-website/</loc>
+		<lastmod>2019-11-16T19:24:44+00:00</lastmod>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/08/best-web-host-small-business-website.jpeg</image:loc>
+			<image:title><![CDATA[best-web-host-small-business-website]]></image:title>
+			<image:caption><![CDATA[laptop on wooden table next to coffee mug and a mobile phone]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://bilimoria.io/blog/getting-started-with-a-cdn-what-is-it-and-do-you-honestly-need-one/</loc>
+		<lastmod>2019-11-16T19:24:44+00:00</lastmod>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/09/pexels-photo-373543-1.jpeg</image:loc>
+			<image:title><![CDATA[CDN]]></image:title>
+			<image:caption><![CDATA[blue neon lights weaving together]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/09/Without_CDN.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>https://bilimoria.io/wp-content/uploads/2018/09/With_CDN.png</image:loc>
+			<image:caption><![CDATA[With a CDN]]></image:caption>
+		</image:image>
+	</url>
+</urlset>
+<!-- XML Sitemap generated by Yoast SEO -->
