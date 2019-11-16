@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html amp lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1"><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bilimoria.io/#website","url":"https://bilimoria.io/","name":"Bilimoria Tech","potentialAction":{"@type":"SearchAction","target":"https://bilimoria.io/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://bilimoria.io/blog/lazy-loading-images-examples/#primaryimage","url":"https://bilimoria.io/wp-content/uploads/2018/05/medium-images.png","width":"1241","height":"730","caption":"Screenshot of Medium images loading"},{"@type":"WebPage","@id":"https://bilimoria.io/blog/lazy-loading-images-examples/#webpage","url":"https://bilimoria.io/blog/lazy-loading-images-examples/","inLanguage":"en-US","name":"Ultimate Guide: Lazy Loading Images - Bilimoria Tech","isPartOf":{"@id":"https://bilimoria.io/#website"},"primaryImageOfPage":{"@id":"https://bilimoria.io/blog/lazy-loading-images-examples/#primaryimage"},"datePublished":"2018-05-03T02:37:16+00:00","dateModified":"2019-11-16T19:24:44+00:00","author":{"@id":"https://bilimoria.io/#/schema/person/d4e2512f5d83c1ab13dff03b58b4e15d"},"description":"Step right in to quickly learn about lazy loading, see lazy loading images examples, and get the 101 on how to lazy load as a humble small business owner."},{"@type":["Person"],"@id":"https://bilimoria.io/#/schema/person/d4e2512f5d83c1ab13dff03b58b4e15d","name":"Jenny Medeiros","image":{"@type":"ImageObject","@id":"https://bilimoria.io/#authorlogo","url":"https://secure.gravatar.com/avatar/13d7b6157208791e4176825740c38493?s=96&d=mm&r=g","caption":"Jenny Medeiros"},"sameAs":[]}]}</script><meta property="og:type" content="article"><meta property="og:title" content="Ultimate Guide: Lazy Loading Images"><meta property="og:url" content="https://bilimoria.io/blog/lazy-loading-images-examples/"><meta property="og:description" content="Few things in life make you want to throw your laptop out the window as a slow loading website can. These sloths of the internet are about as fun as a dial-up connection. And you already know one o…"><meta property="article:published_time" content="2018-05-03T02:37:16+00:00"><meta property="article:modified_time" content="2019-11-16T19:24:44+00:00"><meta property="og:site_name" content="Bilimoria Tech"><meta property="og:image" content="https://bilimoria.io/wp-content/uploads/2018/05/medium-images.png"><meta property="og:image:width" content="1241"><meta property="og:image:height" content="730"><meta property="og:image:alt" content="Screenshot of Medium images loading"><meta property="og:locale" content="en_US"><title>Ultimate Guide: Lazy Loading Images - Bilimoria Tech</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+amp-carousel .amp-wp-gallery-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 1rem;
+}
+
+.wp-block-gallery[data-amp-carousel="true"] {
+	display: block;
+	flex-wrap: unset;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 1140px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #fff;
+	color: #353535;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #353535;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #353535;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #353535;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #353535;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #696969;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #c2c2c2;
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #c2c2c2 url( https://bilimoria.io/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #c2c2c2;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #c2c2c2;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #696969;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style></head><body class="">
+
+<header id="top" class="amp-wp-header"><div>
+		<a href="https://bilimoria.io/">
+										<amp-img src="https://bilimoria.io/wp-content/uploads/2017/11/cropped-favicon-nbg-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				Bilimoria Tech			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">Ultimate Guide: Lazy Loading Images</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/13d7b6157208791e4176825740c38493?s=24&d=mm&r=g" alt="Jenny Medeiros" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">Jenny Medeiros</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2018-05-03T02:37:16+00:00">
+		2 years ago	</time></div>
+	</header><div class="amp-wp-article-content">
+		<p>Few things in life make you want to throw your laptop out the window as a slow loading website can. These sloths of the internet are about as fun as a dial-up connection. And you already know one of the main culprits. Yep, you got it. <b>Images.</b><br><br>
+But as a website owner, what can you do? Images make up <a href="http://httparchive.org/interesting.php?a=All&l=Mar%2015%202017#bytesperpage">65% of all web content</a>. Not to mention users love looking at them and websites look better with them. In fact, the more, the merrier! </p>
+<p>The problem is that loading images uses up a lot of resources and lowers your overall website performance. It’s one of those double-edge-sword kinds of situations.</p>
+<p>Here’s where lazy loading saunters in. You’ve heard of it here and there. Maybe your developer friend said it was a good way to go. But you want to get cozy with the idea before doing anything too crazy with your website. </p>
+<p>It’s a good thing you’re here because you’re about to get super savvy on everything you need to know about lazy loading images.</p>
+<p>Let’s get started!</p>
+<h2>What is lazy loading?</h2>
+<p>Think about a slacking employee who only works when their boss is looking. That’s kind of what your browser does when it’s lazy loading images. It only loads the images you’re looking at and delays the rest until you scroll down to see them.</p>
+<p>This sneaky technique allows the content on-screen to load much faster since the page isn’t trying to load all the content off-screen at the same time. It’s essentially loading the content into small, manageable batches.</p>
+<p>You’ve probably seen lazy loading in action. It goes something like this:</p>
+<ol><li>You land on a page and take a good look at the content (above the fold).</li>
+<li>After a few seconds, you scroll down to nosey the rest of the page.</li>
+<li>You’ll notice images start to appear as you scroll by. Sometimes there’ll be a placeholder that suddenly gets replaced by the real image.</li>
+<li>You stay on the website because it’s showing you what you want to see without making you wait. Mission accomplished.</li>
+</ol><p></p>
+<h2>What are some lazy loading examples?</h2>
+<p>Lazy loading images is a pretty popular thing to do on the interwebs. If a website has a lot of images to show, then they lazy load them to save precious time and effort. It’s simply another great way to <a href="https://bilimoria.io/blog/website-speed/" target="_blank" rel="noopener noreferrer">optimize your website</a>. Here are a few snapshots to give you a better idea.</p>
+<h3>Google Images</h3>
+<p><amp-img class="aligncenter wp-image-3348 size-large amp-wp-enforced-sizes" src="https://bilimoria.io/wp-content/uploads/2018/05/google-images-1024x513.png" alt="Screenshot of Google Images loading" width="1024" height="513" srcset="https://bilimoria.io/wp-content/uploads/2018/05/google-images-1024x513.png 1024w, https://bilimoria.io/wp-content/uploads/2018/05/google-images-300x150.png 300w, https://bilimoria.io/wp-content/uploads/2018/05/google-images-768x385.png 768w, https://bilimoria.io/wp-content/uploads/2018/05/google-images-350x175.png 350w, https://bilimoria.io/wp-content/uploads/2018/05/google-images.png 1426w" layout="intrinsic"><noscript><img class="aligncenter wp-image-3348 size-large" src="https://bilimoria.io/wp-content/uploads/2018/05/google-images-1024x513.png" alt="Screenshot of Google Images loading" width="1024" height="513" srcset="https://bilimoria.io/wp-content/uploads/2018/05/google-images-1024x513.png 1024w,https://bilimoria.io/wp-content/uploads/2018/05/google-images-300x150.png 300w,https://bilimoria.io/wp-content/uploads/2018/05/google-images-768x385.png 768w,https://bilimoria.io/wp-content/uploads/2018/05/google-images-350x175.png 350w,https://bilimoria.io/wp-content/uploads/2018/05/google-images.png 1426w" sizes="(max-width: 1024px) 100vw, 1024px"></noscript></amp-img></p>
+<p>Google loads the first images quickly then loads the rest as you scroll down.</p>
+<h3>Medium</h3>
+<p><amp-img class="aligncenter wp-image-3347 size-large amp-wp-enforced-sizes" src="https://bilimoria.io/wp-content/uploads/2018/05/medium-images-1024x602.png" alt="Screenshot of Medium images loading" width="1024" height="602" srcset="https://bilimoria.io/wp-content/uploads/2018/05/medium-images-1024x602.png 1024w, https://bilimoria.io/wp-content/uploads/2018/05/medium-images-300x176.png 300w, https://bilimoria.io/wp-content/uploads/2018/05/medium-images-768x452.png 768w, https://bilimoria.io/wp-content/uploads/2018/05/medium-images.png 1241w" layout="intrinsic"><noscript><img class="aligncenter wp-image-3347 size-large" src="https://bilimoria.io/wp-content/uploads/2018/05/medium-images-1024x602.png" alt="Screenshot of Medium images loading" width="1024" height="602" srcset="https://bilimoria.io/wp-content/uploads/2018/05/medium-images-1024x602.png 1024w,https://bilimoria.io/wp-content/uploads/2018/05/medium-images-300x176.png 300w,https://bilimoria.io/wp-content/uploads/2018/05/medium-images-768x452.png 768w,https://bilimoria.io/wp-content/uploads/2018/05/medium-images.png 1241w" sizes="(max-width: 1024px) 100vw, 1024px"></noscript></amp-img></p>
+<p>Medium uses “progressive loading” which is just a blurry version of the final image.</p>
+<h3>Unsplash</h3>
+<p><amp-img class="aligncenter wp-image-3346 size-large amp-wp-enforced-sizes" src="https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images-1024x522.png" alt="Screenshot of Unsplash images loading" width="1024" height="522" srcset="https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images-1024x522.png 1024w, https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images-300x153.png 300w, https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images-768x391.png 768w, https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images.png 1427w" layout="intrinsic"><noscript><img class="aligncenter wp-image-3346 size-large" src="https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images-1024x522.png" alt="Screenshot of Unsplash images loading" width="1024" height="522" srcset="https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images-1024x522.png 1024w,https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images-300x153.png 300w,https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images-768x391.png 768w,https://bilimoria.io/wp-content/uploads/2018/05/unsplash-images.png 1427w" sizes="(max-width: 1024px) 100vw, 1024px"></noscript></amp-img></p>
+<p>Unsplash loads images as you scroll too. The grey placeholders get replaced in a split second.</p>
+<h3>Pinterest</h3>
+<p><amp-img class="aligncenter wp-image-3345 size-large amp-wp-enforced-sizes" src="https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images-1024x527.png" alt="Screenshot of Pinterest images loading" width="1024" height="527" srcset="https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images-1024x527.png 1024w, https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images-300x154.png 300w, https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images-768x395.png 768w, https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images.png 1412w" layout="intrinsic"><noscript><img class="aligncenter wp-image-3345 size-large" src="https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images-1024x527.png" alt="Screenshot of Pinterest images loading" width="1024" height="527" srcset="https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images-1024x527.png 1024w,https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images-300x154.png 300w,https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images-768x395.png 768w,https://bilimoria.io/wp-content/uploads/2018/05/pinterest-images.png 1412w" sizes="(max-width: 1024px) 100vw, 1024px"></noscript></amp-img></p>
+<p>Pinterest uses colorful placeholders to snag your short attention span while the images load.</p>
+<h2>What are the advantages of lazy loading?</h2>
+<p>So far lazy loading seems like the bee’s knees for faster websites. But you may ask yourself, “Is it <i>really</i> that bad if I just…load things normally?” Well, there are three main advantages to lazy loading that you should think about before tossing the idea out the window.</p>
+<p><b>Optimized web performance </b>This one is obvious, but it’s the main reason lazy loading became a thing in the first place. </p>
+<p>When you lazy load, you’re reducing the initial load time and use of resources (server time, browser processing, etc.). This lets your webpage pounce on the screen instead of crawling its way into view. As we all know, faster = better.</p>
+<p><b>Improved SEO </b>A webpage struggling to load 20 images at once is bound to be slow. And slow pages hurt your overall SEO since Google considers <a href="https://bilimoria.io/blog/all-you-ever-need-to-know-about-website-speed/" target="_blank" rel="noopener noreferrer">page speed</a> when ranking your website. </p>
+<p>Plus, users <i>hate</i> waiting online and will jump ship if your page takes more than <a href="https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/" target="_blank" rel="noopener noreferrer">two seconds to load</a>. If that wasn’t bad enough, this shifty behavior makes Google think your website’s a bad apple and will rank you even lower. Farewell, web traffic.</p>
+<p><b>Less data usage for mobile users </b>More than half of online browsing takes place on mobile nowadays. This means a chunk of your leads will drop you like a hot potato if your website is draining half their data (and their battery). </p>
+<p>Lazy loading only uses enough resources to reveal what’s on screen, so images off-screen won’t use any at all if the user never scrolls down to them. Smart, right?</p>
+<h2>But is lazy loading <b>always</b> necessary?</h2>
+<p>Here’s a quick algorithm for you. Is your image-heavy website having performance issues? If yes, then consider lazy loading part of your solution. If no, then don’t worry about it. If it ain’t broke, don’t fix it.</p>
+<h2>How to implement lazy loading?</h2>
+<p>So you’ve finally decided you need lazy loading to improve your website performance. Congrats! You’re already a step ahead of many website owners out there.</p>
+<p>There are more than a few ways to go about it, but we’ll cover the best approaches, and you can choose the right one for you (or at least get the right link to fling over to a developer).</p>
+<h3>For the brave: Code it yourself</h3>
+<p>If you’re a DIY kind of person, then you may want to roll up your sleeves, flex your fingers and type up a lazy loading solution in good ol’ JavaScript. </p>
+<p>You can find tutorials for <a href="https://davidwalsh.name/lazyload-image-fade" target="_blank" rel="noopener noreferrer">simple JavaScript lazy loading</a> where images gracefully fade into view. Or you can copy Medium’s blurry pre-image method by <a href="https://www.sitepoint.com/how-to-build-your-own-progressive-image-loader/" target="_blank" rel="noopener noreferrer">building your own progressive image loader</a>.</p>
+<p>If you want to get fancy with colorful placeholders like you saw on the Pinterest example earlier, take a look at this guide by Manuel Wieser about <a href="https://manu.ninja/dominant-colors-for-lazy-loading-images/">dominant color placeholders for lazy loading images</a>.<br><br></p><h3>For the practical: Use a lazy loading library</h3>
+<p>Even if you’re able to code it from scratch, it’s always faster if you use a library. Here’s a brief rundown of a few snazzy libraries you can use for lazy loading:</p>
+<p><a href="https://github.com/toddmotto/echo">Echo.js</a>: Also known as the vanilla JavaScript to lazy loading images as they become visible on screen. Nothing fancy, just a job well done.</p>
+<p><a href="http://dinbror.dk/blazy/+">BLazy.js</a>: Aside from having the best name, this library is slightly heavier than Echo.js, but it packs more of a punch. You can define lazy loading images for retina displays and even for specific screen sizes.</p>
+<p><a href="https://github.com/ApoorvSaxena/lozad.js">Lozad.js</a>: This one lazy loads all kinds of images and videos, even ads. It supports responsive images and backgrounds too.</p>
+<h3>For the busy: Install a lazy loading WordPress plugin</h3>
+<p>What better way than simply installing a plugin that will do all the work for you. Check out these top-rated lazy load plugins for WordPress websites. The best part is they’re free. We like free.</p>
+<p><a href="http://wordpress.org/plugins/lazy-load/">Lazy Load</a>: A no-nonsense lazy load plugin that just does the job. No customizing, no nothing.</p>
+<p><a href="https://wordpress.org/plugins/bj-lazy-load/">BJ Lazy Load</a>: Ignore the name for a second. This plugin gives you control over all kinds of images and even works on videos embedded from YouTube and Vimeo.</p>
+<p><a href="https://wordpress.org/plugins/a3-lazy-load/">A3 Lazy Load</a>: This is a popular one. It’s focused on mobile and works on both images and videos.</p>
+<p><a href="https://wordpress.org/plugins/rocket-lazy-load/">Rocket Lazy Load:</a> One of the lightest plugins around. It does what the rest do and is also open source.</p>
+<p><a href="https://wordpress.org/plugins/dominant-colors-lazy-loading/">Dominant Colors Lazy Loading</a>: Remember those fancy placeholders we mentioned earlier? This plugin will add a splash of color to your page while the images are getting ready for showtime.</p>
+<h2>Wait, what about lazy loading for video and audio?</h2>
+<p>Aha! Want to take it a step further, do you? That’s good, and it also makes a lot of sense since videos and audio files can be way heavier than images.</p>
+<p>Many of the WordPress plugins you saw a moment ago do cover lazy loading for videos, but you can also check out a dedicated plugin just for videos <a href="https://wordpress.org/plugins/lazy-load-for-videos/">here</a>, and a lazy loading plugin for both video and audio <a href="https://wordpress.org/plugins/velocity/">here</a>.<br> Don’t say we’re not helpful.</p>
+<h2>Okay, lazy loading is great, but I’m still stuck. What now?</h2>
+<p>Well, my friend, if you’re still here instead of in a new tab reading a tutorial on lazy loading, then you’re most likely an innocent business owner in need of some personalized help. </p>
+<p>It’s okay; your job is focusing on growing your business, not tweaking HTML. That’s what nerdy web developers like us are for.</p>
+<p>So if optimizing your website performance is high on your priority list, schedule a quick chat with us <a href="https://bilimoria.io/contact/">here</a>. You don’t have to commit to anything; it’s just a friendly “get to know you” call. The worst case scenario is you’ll leave with some tips to smarten up your website.</p>
+<p><a href="https://bilimoria.io/contact">Contact us today!</a></p>
+	</div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://bilimoria.io/blog/category/image-optimization/" rel="category tag">Image Optimization</a>, <a href="https://bilimoria.io/blog/category/site-speed/" rel="category tag">Site Speed</a>	</div>
+
+	<div class="amp-wp-meta amp-wp-tax-tag">
+		Tags: <a href="https://bilimoria.io/blog/tag/how-to-lazy-load-images/" rel="tag">how to lazy load images</a>, <a href="https://bilimoria.io/blog/tag/lazy-load-images-example/" rel="tag">lazy load images example</a>, <a href="https://bilimoria.io/blog/tag/lazy-load-images-wordpress/" rel="tag">lazy load images wordpress</a>, <a href="https://bilimoria.io/blog/tag/website-developer-in-portland-oregan/" rel="tag">website developer in portland oregan</a>, <a href="https://bilimoria.io/blog/tag/what-is-lazy-loading/" rel="tag">what is lazy loading</a>	</div>
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="https://bilimoria.io/blog/lazy-loading-images-examples/#comments">
+			View Comments		</a>
+	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>Bilimoria Tech</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer><amp-pixel src="https://pixel.wp.com/g.gif?v=ext&j=1%3A7.9&blog=144468188&post=3341&tz=0&srv=bilimoria.io&host=bilimoria.io&rand=RANDOM&ref=DOCUMENT_REFERRER"></amp-pixel></body></html>
