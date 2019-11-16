@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html amp lang="en-US"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1"><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://bilimoria.io/#website","url":"https://bilimoria.io/","name":"Bilimoria Tech","potentialAction":{"@type":"SearchAction","target":"https://bilimoria.io/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://bilimoria.io/blog/slow-wordpress-website-heres-how-to-speed-it-up/#primaryimage","url":"https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed.jpg","width":1280,"height":826,"caption":"Laptop with wordpress website on the screen"},{"@type":"WebPage","@id":"https://bilimoria.io/blog/slow-wordpress-website-heres-how-to-speed-it-up/#webpage","url":"https://bilimoria.io/blog/slow-wordpress-website-heres-how-to-speed-it-up/","inLanguage":"en-US","name":"Slow WordPress Website? Here's How To Speed It Up - Bilimoria Tech","isPartOf":{"@id":"https://bilimoria.io/#website"},"primaryImageOfPage":{"@id":"https://bilimoria.io/blog/slow-wordpress-website-heres-how-to-speed-it-up/#primaryimage"},"datePublished":"2018-12-10T22:35:48+00:00","dateModified":"2019-11-16T19:24:43+00:00","author":{"@id":"https://bilimoria.io/#/schema/person/d4e2512f5d83c1ab13dff03b58b4e15d"},"description":"A slow WordPress website can sabotage your business success, so here are the top tools and tips to make your WordPress website blazingly fast."},{"@type":["Person"],"@id":"https://bilimoria.io/#/schema/person/d4e2512f5d83c1ab13dff03b58b4e15d","name":"Jenny Medeiros","image":{"@type":"ImageObject","@id":"https://bilimoria.io/#authorlogo","url":"https://secure.gravatar.com/avatar/13d7b6157208791e4176825740c38493?s=96&d=mm&r=g","caption":"Jenny Medeiros"},"sameAs":[]}]}</script><meta property="og:type" content="article"><meta property="og:title" content="Slow WordPress Website? Here’s How To Speed It Up"><meta property="og:url" content="https://bilimoria.io/blog/slow-wordpress-website-heres-how-to-speed-it-up/"><meta property="og:description" content="Is your small business website running on WordPress? If yes, then you’re part of the popular crowd. According to recent stats, WordPress powers about 26% of the world wide web. It’s no …"><meta property="article:published_time" content="2018-12-10T22:35:48+00:00"><meta property="article:modified_time" content="2019-11-16T19:24:43+00:00"><meta property="og:site_name" content="Bilimoria Tech"><meta property="og:image" content="https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed.jpg"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="826"><meta property="og:image:alt" content="Laptop with wordpress website on the screen"><meta property="og:locale" content="en_US"><title>Slow WordPress Website? Here's How To Speed It Up - Bilimoria Tech</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+amp-carousel .amp-wp-gallery-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 1rem;
+}
+
+.wp-block-gallery[data-amp-carousel="true"] {
+	display: block;
+	flex-wrap: unset;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 1140px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #fff;
+	color: #353535;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #353535;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #353535;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #353535;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #353535;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #696969;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #c2c2c2;
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #c2c2c2;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #c2c2c2 url( https://bilimoria.io/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #696969;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #c2c2c2;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #c2c2c2;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #696969;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style></head><body class="">
+
+<header id="top" class="amp-wp-header"><div>
+		<a href="https://bilimoria.io/">
+										<amp-img src="https://bilimoria.io/wp-content/uploads/2017/11/cropped-favicon-nbg-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				Bilimoria Tech			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">Slow WordPress Website? Here’s How To Speed It Up</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/13d7b6157208791e4176825740c38493?s=24&d=mm&r=g" alt="Jenny Medeiros" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">Jenny Medeiros</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2018-12-10T22:35:48+00:00">
+		11 months ago	</time></div>
+	</header><figure class="amp-wp-article-featured-image wp-caption"><amp-img width="1024" height="661" src="https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed-1024x661.jpg" class="attachment-large size-large wp-post-image amp-wp-enforced-sizes" alt="Laptop with wordpress website on the screen" srcset="https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed-1024x661.jpg 1024w, https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed-300x194.jpg 300w, https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed-768x496.jpg 768w, https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed.jpg 1280w" layout="intrinsic"><noscript><img width="1024" height="661" src="https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed-1024x661.jpg" class="attachment-large size-large wp-post-image" alt="Laptop with wordpress website on the screen" srcset="https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed-1024x661.jpg 1024w,https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed-300x194.jpg 300w,https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed-768x496.jpg 768w,https://bilimoria.io/wp-content/uploads/2018/11/WordPress-website-speed.jpg 1280w" sizes="(max-width: 1024px) 100vw, 1024px"></noscript></amp-img></figure><div class="amp-wp-article-content">
+		<p>Is your small business website running on WordPress? If yes, then you’re part of the popular crowd. According to <a href="https://wordpress.com/about/?aff=2718" rel="noopener noreferrer" target="_blank">recent stats</a>, WordPress powers about 26% of the world wide web.
+</p>
+<p>It’s no surprise everyone has jumped onto the WordPress train considering it’s the most powerful and versatile Content Management Systems (CMS) out there. From small travel blogs and burgeoning business websites to Fortune 500s like Sony Music and Forbes blog. WordPress is a force to be reckoned with.
+</p>
+<p>The problem with WordPress (and most websites) is that it’s easy to overstuff it with plugins, leave broken links unattended, and bog it down with heavy media. The good news is that all of this and all other slow-loading WordPress problems can be fixed. Quite easily, we might add.
+</p>
+<p>So, settle into your chair, grab a pen and get ready to learn:
+</p>
+<ul><li>Why your WordPress website is slower than a dial-up connection.</li>
+<li>How to check for performance issues in just two clicks.</li>
+<li>Five easy tips to kick your slow WordPress website into warp speed.</li>
+</ul><p><strong></strong></p>
+<h2>Reasons your WordPress website is slow</h2>
+<p>Slow websites are the stone in the internet’s shoe. They’re annoying and they happen more often than anyone would like.
+</p>
+<p>When you have a small business website that’s already struggling for attention, the last thing you need is for it to load at the speed of nothing. In fact, according to SEO guru, <a href="https://neilpatel.com/blog/loading-time/" rel="noopener noreferrer" target="_blank">Neil Patel</a>, here are a few major reasons how laggy sites can sabotage your business goals.
+</p>
+<ul><li>Slower loading times equal more page abandonments. After 2-3 seconds, poof.</li>
+<li>Page speed is a ranking signal at Google. The slower you load, the lower you go. </li>
+<li>79% of online shoppers never return to a low-performing website.</li>
+<li>Every three seconds you make a visitor wait decreases their satisfaction by 16%.</li>
+<li>One second delay can result in a 7% reduction in conversions. Ouch.</li>
+</ul><p>We won’t go into too much detail about site speed here (we already did that in our post on <a href="https://bilimoria.io/blog/website-speed/" rel="noopener noreferrer" target="_blank">Everything You Need To Know About Web Speed</a>), so we’ll jump right into the top reasons why your website is being a right pain.
+</p>
+<ul><li>It’s bloated with plugins, old scripts, and unused links.</li>
+<li>Your hosting provider can’t keep up with the traffic.</li>
+<li>You have way too many heavy images.</li>
+<li>Your website isn’t leveraging caching to load pages faster.</li>
+</ul><p>Feeling slightly overwhelmed already? That’s okay, we’re here to guide you through it all. Of course, if you’d rather just have us speed up your website for you so you can focus on other things (like growing your business), drop us a quick message <a href="https://bilimoria.io/contact/" rel="noopener noreferrer" target="_blank">here</a>.
+</p>
+<p>In any case, here’s how to fix all of these issues and more with a bit of research, the right tools, and some elbow grease.</p>
+<p><strong></strong></p>
+<h2>First, check how fast your site is loading</h2>
+<p>You won’t know how grave your situation is until you actually check your website speed. You can do this in just a couple of clicks and using tools like <a href="https://developers.google.com/speed/pagespeed/insights/" rel="noopener noreferrer" target="_blank">Google PageSpeed Insights</a> (free), <a href="https://gtmetrix.com/?logout" rel="noopener noreferrer" target="_blank">GTMetrix</a> (also free), and <a href="https://www.pingdom.com/product/page-speed/" rel="noopener noreferrer" target="_blank">Pingdom</a> (14-day trial).
+</p>
+<p><amp-img src="https://bilimoria.io/wp-content/uploads/2018/11/pagespeed-test.jpg" alt="Screenshot of Pingdom speed test tool" width="960" height="569" class="alignnone size-full wp-image-3583 amp-wp-enforced-sizes" srcset="https://bilimoria.io/wp-content/uploads/2018/11/pagespeed-test.jpg 960w, https://bilimoria.io/wp-content/uploads/2018/11/pagespeed-test-300x178.jpg 300w, https://bilimoria.io/wp-content/uploads/2018/11/pagespeed-test-768x455.jpg 768w" layout="intrinsic"><noscript><img src="https://bilimoria.io/wp-content/uploads/2018/11/pagespeed-test.jpg" alt="Screenshot of Pingdom speed test tool" width="960" height="569" class="alignnone size-full wp-image-3583" srcset="https://bilimoria.io/wp-content/uploads/2018/11/pagespeed-test.jpg 960w,https://bilimoria.io/wp-content/uploads/2018/11/pagespeed-test-300x178.jpg 300w,https://bilimoria.io/wp-content/uploads/2018/11/pagespeed-test-768x455.jpg 768w" sizes="(max-width: 960px) 100vw, 960px"></noscript></amp-img></p>
+<p>All you have to do is paste your website link and then all will be revealed. If you’re still not sure whether your website is much faster or slower than most in your industry, check <a href="https://www.machmetrics.com/speed-blog/average-page-load-times-websites-2018/" rel="noopener noreferrer" target="_blank">this page</a> to see how you compare with the current average load times. </p>
+<p><strong></strong></p>
+<h2>Review your plugins</h2>
+<p>We know. You love WordPress plugins. The simplicity of installing an entire function on your website without needing any meddling developers is a wonderful thing. Except, every plugin you install adds another bucket of code on your website, and over time, all these scripts and stylesheets slow down your website.
+</p>
+<p>So what to do? Well, there’s no other way around it other than manually going through your list of installed plugins and deleting the ones you don’t <em>really</em> need. If you can replace four individual plugins with an all-in-one version, then do it. In general, 20 plugins is the recommended number for WordPress websites.
+</p>
+<p>Avoid having multiple plugins that do the same thing (like SEO plugins, for example), and if you have a plugin that you don’t really understand the point of, <a href="https://bilimoria.io/contact/" rel="noopener noreferrer" target="_blank">ask a developer</a> for advice.
+</p>
+<p>By the way, if you have 30-50+ plugins installed to make your WordPress website just the way you want it, then it’s very likely you could be in need of a new theme that eliminates the need for all that extra baggage. </p>
+<p><strong></strong></p>
+<h2>Optimize your images</h2>
+<p>Images are the best and worst part of any WordPress website. They bring life to what would be a dull, text-laden site but they also weigh it down and slow down page loading times.
+</p>
+<p>Fortunately, images are easy to optimize. Here are a few things you can do to ensure your images aren’t bogging down your site.
+</p>
+<ul><li>Optimize the images in Photoshop using the “Save for Web” feature. (PNGs are lighter than JPEGs.)</li>
+<li>Run your images through free image optimization tools like <a href="https://tinypng.com/" rel="noopener noreferrer" target="_blank">TinyPNG</a>.</li>
+<li>Install the <a href="https://wordpress.org/plugins/wp-smushit/" rel="noopener noreferrer" target="_blank">WP Smush</a> plugin to automatically reduce image sizes.</li>
+<li>If you have an extensive image gallery on a page, try <a href="https://bilimoria.io/blog/lazy-loading-images-examples/" rel="noopener noreferrer" target="_blank">lazy loading them</a>.</li>
+</ul><p><strong></strong></p>
+<h2>Check for broken links and redundant redirects</h2>
+<p>Links that are doing nothing other than cluttering your database have no place in your new, ultra-fast WordPress website. There are plenty of free tools that will give you a list of broken links like <a href="https://www.drlinkcheck.com/" rel="noopener noreferrer" target="_blank">Dr. Link Check</a> and <a href="https://www.deadlinkchecker.com/" rel="noopener noreferrer" target="_blank">Dead Link Checker</a>.
+</p>
+<p>As for redirects, think of these as connecting flights where the more connections you have to take the longer it’ll take you to reach your final destination. Some redirects are good, but too many will bring your page response time crashing down.
+</p>
+<p>Use good ol’ <a href="https://developers.google.com/speed/pagespeed/insights/" rel="noopener noreferrer" target="_blank">Google PageSpeed</a> to see which redirects are lowering your speed score. Another is<br><a href="https://varvy.com/tools/redirects/" rel="noopener noreferrer" target="_blank">Redirect Mapper Tool</a>, that focuses on how many redirects your main website URL is putting visitors through.</p>
+<p>
+Once you’ve identified the culprits, you can go ahead and start deleting the redirects your website could do without.</p>
+<p><strong></strong></p>
+<h2>Enable browser caching</h2>
+<p>Caching is a nifty technique where rarely-changed elements on your website (like your logo, background, etc.) are stored on the visitor’s computer. So the next time they visit your website, there’s no need to wait for all those things to download again. This makes your website load twice as fast since half the work has already been done.
+</p>
+<p>Not only does it save on bandwidth, it also provides a better experience for mobile users (which is more than <a href="https://wearesocial.com/blog/2018/01/global-digital-report-2018" rel="noopener noreferrer" target="_blank">52% of all online traffic</a>) – who also happen to be the most impatient.
+</p>
+<p>To get this magic-sounding thing working for your own WordPress website, the easiest way is to install a plugin. Yes, we know we told you to avoid bloating your website with plugins but technically you’re allowed 20 and this one is important.
+</p>
+<p>Check out <a href="https://wordpress.org/plugins/w3-total-cache/" rel="noopener noreferrer" target="_blank">WP Total Cache</a> (totally free), <a href="http://wp-rocket.me/" rel="noopener noreferrer" target="_blank">WP Rocket</a> (paid, but worth it), and <a href="https://wordpress.org/plugins/comet-cache/" rel="noopener noreferrer" target="_blank">Comet Cache</a> (free and paid options).
+</p>
+<p>You can find even more tips and tools for browser caching and learn all the easy ways you can leverage it right <a href="https://bilimoria.io/blog/how-leverage-browser-caching/" rel="noopener noreferrer" target="_blank">here</a>.</p>
+<p><strong></strong></p>
+<h2>Upgrade your hosting plan</h2>
+<p>“Upgrading” is not a word you want to hear when the budget is tight, but it may be the only way to get your WordPress website running at top speed.
+</p>
+<p>If you’ve checked everything else and the need for speed still stands, then chances are you’re getting more traffic than what your poor hosting server can handle.
+</p>
+<p>When choosing a hosting plan, you need to make sure it can accommodate the size and expected popularity of your website. Otherwise, it’ll only sputter and struggle to load your pages and effectively frustrate all your visitors.
+</p>
+<p>Sometimes all it takes is forking out a little extra dough each month, but other times you need to switch to a faster and better hosting provider altogether. It sounds like a lot, we know, so we made a <a href="https://bilimoria.io/blog/best-web-hosting-small-business-website/" rel="noopener noreferrer" target="_blank">beginner’s guide to web hosting</a> so you know which option is best for your webite.    </p>
+<p><strong></strong></p>
+<h2>Need a hand with your WordPress website?</h2>
+<p>At this point, you’re already much savvier than most small business owners when it comes to making WordPress websites faster. But taking out the time to fix it all yourself isn’t something everybody wants to bother with.
+</p>
+<p>If you need to take a load off your plate and want to stop bleeding money due to your painfully slow website, send us a quick message and tell us how we can help your business run smoother.
+</p>
+<p><a href="https://bilimoria.io/contact/" rel="noopener noreferrer" target="_blank">Get in touch</a> today!</p>
+	</div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://bilimoria.io/blog/category/site-speed/" rel="category tag">Site Speed</a>	</div>
+
+	<div class="amp-wp-meta amp-wp-tax-tag">
+		Tags: <a href="https://bilimoria.io/blog/tag/small-business-wordpress-website/" rel="tag">small business wordpress website</a>, <a href="https://bilimoria.io/blog/tag/speed-up-wordpress-website/" rel="tag">speed up wordpress website</a>, <a href="https://bilimoria.io/blog/tag/website-speed-tips-wordpress/" rel="tag">website speed tips wordpress</a>, <a href="https://bilimoria.io/blog/tag/wordpress/" rel="tag">WordPress</a>	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>Bilimoria Tech</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer><amp-pixel src="https://pixel.wp.com/g.gif?v=ext&j=1%3A7.9&blog=144468188&post=3579&tz=0&srv=bilimoria.io&host=bilimoria.io&rand=RANDOM&ref=DOCUMENT_REFERRER"></amp-pixel></body></html>
